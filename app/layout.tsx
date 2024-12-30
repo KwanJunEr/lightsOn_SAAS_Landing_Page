@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import {DM_Sans} from 'next/font/google'
-import { twMerge } from "tailwind-merge";
 import "./globals.css";
+import { twMerge } from "tailwind-merge";
 
-const dmSans = DM_Sans({subsets : ['latin']});
-
-
+const dmSans = DM_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "LightsOn",
-  description: "SaaS Landing Page with React, Next.js, TailwindCSS & Framer",
+  description: "SaaS Landing Page with React, Next.js, TailwindCSS & Framer Motion",
 };
 
 export default function RootLayout({
@@ -19,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="relative">
       <body
-        className={twMerge(dmSans.className, "antialiased bg-[#EAEEFE]")}
+        className={twMerge(dmSans.className,"antialiased bg-[#EAEEFE]")}
       >
         {children}
       </body>
