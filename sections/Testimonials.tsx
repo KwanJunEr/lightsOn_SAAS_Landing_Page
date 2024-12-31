@@ -75,8 +75,8 @@ const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
-const TestimonialsColumn = (props : {testimonials : typeof testimonials}) => (
-  <div className="flex flex-col gap-6 mt-10"  style={{ maskImage: "linear-gradient(to bottom, transparent, black_25%, black_75%,  transparent)" }}>
+const TestimonialsColumn = (props : { className? : string;  testimonials : typeof testimonials}) => (
+  <div className={twMerge("flex flex-col gap-6 pb-6",props.className)} >
   {props.testimonials.map(({ text, imageSrc, name, username }) => (
     <div className="card">
       <div>{text}</div>
@@ -102,6 +102,7 @@ const Testimonials = () => {
   return (
     <section className="bg-white">
       <div className="container">
+        <div className="section-heading">
         <div className="flex justify-center">
           <div className="tag">Testimonials</div>
         </div>
@@ -110,15 +111,12 @@ const Testimonials = () => {
           From intuitive design to powerful features, out app has become an
           essential tool for users around the world.
         </p>
-        <div className="flex justify-center gap-6">
+        </div>
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
       
-        <TestimonialsColumn testimonials={firstColumn}/>
-
-
-
-
-
-        
+        <TestimonialsColumn testimonials={firstColumn} />
+        <TestimonialsColumn testimonials={secondColumn} className="hidden md:flex"/>  
+        <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:flex"/>  
         </div>
       </div>
     </section>
