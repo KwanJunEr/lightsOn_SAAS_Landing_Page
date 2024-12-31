@@ -13,7 +13,7 @@ const CallToAction = () => {
     offset: ['start end', 'end start']
   });
   
-  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);  /*These are the points from the scrollYProgress where transformations start and end.*/
 
   return (
     <section ref = {sectionRef} className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip">
